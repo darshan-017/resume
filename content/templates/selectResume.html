@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row m-5">
+        <div class="col-6">
+            <div class="card"  >
+                <img class="card-img-top" src="{% static 'images/resume_type1.jpg' %}" style="height:500px;width:450px" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Smart Resume</h5>
+                    <p class="card-text">It's the decent and Smart resume where the score for this resume is 78%. It will display all of your skills properly</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'images/resume_type_2.png' %}" style="height:500px;width:450px" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Popular REsume</h5>
+                    <p class="card-text">It's the most commonly used resume templates most of the people prefer this because of simplicity and good looks.
+                    and the score of the resume is 83% </p>
+                    <a href="{% url 'resume2'%}" class="btn btn-primary">Use this Resume</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<style>
+body  {
+  background-image: url("{% static 'images/register.png' %}");
+  background-size: 1800px 900px;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-attachment: fixed;
+  background-color: #cccccc;
+}
+</style>
+    <div class="container w-50 bg-light mt-5" style="min-height:550px;min-width:600px" >
+        <form method="post">
+            <h1 class="text-center m-5 text-warning">Registration Form</h1>
+            {% csrf_token %}
+            <div class="form-group">
+                {{form|crispy}}
+            </div>
+        <button type="submit"  class="btn btn-lg btn-info mx-auto btn-block"  style="width:200px" >Register</button>
+        </form>
+    </div>
+{% endblock %}

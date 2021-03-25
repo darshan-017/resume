@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<style>
+body  {
+  background-color: #ddd;
+}
+</style>
+    {% if msg %}
+        <h1 class="text-danger">{{msg}}</h1>
+    {% endif %}
+    <div class="container w-50  mt-5" style="min-height:550px;" >
+        <form method="post">
+            <h1 class="text-center m-5 text-warning">You can Add Work Experience Here </h1>
+            {% csrf_token %}
+            <div class="form-group">
+                {{form|crispy}}
+            </div>
+        <button type="submit"  class="btn btn-lg btn-danger mx-auto btn-block">Add Experience</button>
+        </form>
+    </div>
+{% endblock %}

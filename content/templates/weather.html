@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <form method="post" class="mt-5">{% csrf_token %}
+      <div class="form-group">
+        <label for="exampleInputEmail1">Enter the Country name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="country">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Enter the City</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" name="city">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+<div class="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2>Country: {{country_l}}</h2>
+                <img src="https://flagcdn.com/h240/{{country}}.png" height="240" alt="Ghana">
+            </div>
+            <div class="col-6">
+                <h1>Temprature : {{temp}}</h1>
+            </div>
+        </div>
+    </div>
+    <h1>Weather</h1>
+
+</div>
+
+{% endblock %}

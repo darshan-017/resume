@@ -1,0 +1,10 @@
+.NameDisplay {
+    text-transform: uppercase;
+    letter-spacing: 5px
+  }
+
+.imageA{
+    height:200px;
+    width:200px; 
+    margin-left: 50px;
+}

@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block content %}
+{{user}}
+<h3 class="m-3">Personal Details</h3>
+    <table class="table table-striped table-info">
+        <tr>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Image</th>
+            <th>Linked IN</th>
+            <th>GIT HUB</th>
+            <th>City</th>
+            <th>State</th>
+            <th>About</th>
+            <th><a href="{% url 'personal_detail' %}" class="btn btn-block btn-success">ADD Personal Details</a> </th>
+        </tr>
+    {% for i in pro %}
+        <tr>
+            <td>{{i.email}}</td>
+            <td>{{i.phone}}</td>
+            <td><img src="{{i.image.url}}" style="width:200px;height:200px" /></td>
+            <td>{{i.linkedin}}</td>
+            <td>{{i.Git_Hub}}</td>
+            <td>{{i.city}}</td>
+            <td>{{i.state}}</td>
+            <td>{{i.about}}</td>
+            <td><a href="{% url 'edit_personal' %}" class="btn btn-dark btn-lg" >Edit Some detail</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+
+<h3 class="m-4">Educational qualification</h3>
+    <table class="table table-striped">
+        <tr>
+            <th>degree </th>
+            <th>college</th>
+            <th>percentage </th>
+            <th>university </th>
+            <th>city </th>
+            <th>state </th>
+            <th><a href="{% url 'add_edu' %}" class="btn btn-block btn-success">Add Educational Qualification</a></th>
+        </tr>
+    {% for i in edu %}
+        <tr>
+            <td>{{i.degree}}</td>
+            <td>{{i.college}}</td>
+            <td>{{i.percentage }}</td>
+            <td>{{i.university }}</td>
+            <td>{{i.city }}</td>
+            <td>{{i.state }}</td>
+            <td><a href="{% url 'edit_edu' i.id %}" class="btn btn-lg btn-dark">Edit</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+
+<h3 class="m-3">Work Experience</h3>
+
+    <table class="table table-striped table-warning">
+        <tr>
+            <th>JOb</th>
+            <th>company </th>
+            <th>project </th>
+            <th>about </th>
+            <th>city </th>
+            <th>state</th>
+            <th><a href="{% url 'addExp' %}" class="btn btn-block btn-success">ADD Working Experience</a> </th>
+        </tr>
+    {% for i in exp %}
+        <tr>
+            <td>{{i.job}}</td>
+    <td>{{i.company }}</td>
+    <td>{{i.project }}</td>
+    <td>{{i.about }}</td>
+    <td>{{i.city }}</td>
+    <td>{{i.state}}</td>
+    <td><a href="{% url 'editExp' i.id %}" class="btn btn-lg btn-dark">Edit</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+
+<h3 class="m-3">Technical Skills </h3>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Skills</th>
+            <th>Rating</th>
+            <th><a href="{% url 'addskill' %}" class="btn btn-block btn-success">Add Skills</a></th>
+        </tr>
+    {% for i in skill %}
+        <tr>
+            <td>{{i.skill}}</td>
+            <td>{{i.rating}}</td>
+            <td><a href="{% url 'editSkill' i.id %}" class="btn btn-lg btn-dark">Edit</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
